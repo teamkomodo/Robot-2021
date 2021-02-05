@@ -1,4 +1,4 @@
-package frc.robot;
+package frc.robot.core;
 
 //DONT MESS WITH THIS FILE (unless you really want to i guess)
 import edu.wpi.first.wpilibj.RobotBase;
