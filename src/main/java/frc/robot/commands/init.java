@@ -1,11 +1,11 @@
 package frc.robot.commands;
 import frc.robot.core.*;
 
-public final class innit {
+public final class init {
     //init all initializers
     OI oi;
     robotMap RobotMap;
-    public innit(String initMode){
+    public init(String initMode){
         //run all initializers
         switch(initMode){
             case "robotInit":
