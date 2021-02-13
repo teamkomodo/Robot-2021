@@ -1,8 +1,9 @@
 package frc.robot.core;
 
+
 public class robotMap {
     //put a map of all control devices here
-    public static final int gamepad = 0; 
+    public static final int gamepad = 2; 
     public static final int abutton = 1;
     public static final int bbutton = 2;
     public static final int xbutton = 3;
