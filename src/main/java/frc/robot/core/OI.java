@@ -8,7 +8,7 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX; 
 import frc.robot.core.Globalvaribles;
-import jdk.nashorn.internal.objects.Global;
+
 
 public final class OI {
     //init all joystics, motor controllers, and io devices here
@@ -17,7 +17,7 @@ public final class OI {
     public TalonFX motor2;
     public TalonFX motor3;
     public TalonFX motor4;
-    
+
     public OI(){
         //assign values here
         gamepad = new Joystick(robotMap.gamepad);
