@@ -1,12 +1,13 @@
 package frc.robot.commands;
 import frc.robot.core.*;
+import frc.robot.core.Joystickcontrols;
 
 public final class periodic {
     //init all initializers
     OI oi;
     robotMap RobotMap;
     Globalvaribles globalvaribles;
-    drive Drive;
+    Joystickcontrols Drive;
     public periodic(String pediodicMode){
         //run all initializers
         switch(pediodicMode){
@@ -20,7 +21,8 @@ public final class periodic {
                 //auto init
             break;
             case "teleopPeriodic":
-                Drive = new drive();
+                Drive = new Joystickcontrols();
+                Drive.drive_funct("tankDrive");
                 //teleop init
             break;
             case "testPeriodic":

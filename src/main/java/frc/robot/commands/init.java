@@ -3,7 +3,7 @@ import frc.robot.core.*;
 
 public final class init {
     //init all initializers
-    OI oi;
+    public static OI oi;
     robotMap RobotMap;
     public init(String initMode){
         //run all initializers
