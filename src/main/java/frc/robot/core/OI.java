@@ -22,11 +22,10 @@ public final class OI {
     public WPI_TalonFX motor4;
     public static DifferentialDrive drive;
     public NetworkTable table;
-    public NetworkTableEntry tx;
-    public NetworkTableEntry ty;
-    public NetworkTableEntry ta;
-    public NetworkTableEntry tv;
-    public NetworkTableEntry tt;
+    public NetworkTableEntry vision;
+
+
+
 
     public OI(){
         //assign values here
@@ -40,6 +39,7 @@ public final class OI {
 
         drive = new DifferentialDrive(motor1,motor3);
 
-        table = NetworkTableInstance.getDefault().getTable("targets");
+        table = NetworkTableInstance.getDefault().getTable("ObjectDetection");
+        vision = table.getEntry("targets");
     }
 }

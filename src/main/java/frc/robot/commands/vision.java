@@ -39,35 +39,24 @@ while True:
     time.sleep(1)
 
 */
-/*
 public class vision {
-String[] dataTypes = new String[] {"Lower Goal", "Feeder Station", "Robot", "Goal", "Ball", "Light", "Team Number", "Light", "Team Number", "Goal Center"};
-int[] activeTargets = new int[] {};
-Double[] temparray = new Double[] {};
-    public vision(){
+    String[] dataTypes = new String[] {"Lower Goal", "Feeder Station", "Robot", "Goal", "Ball", "Light", "Team Number", "Light", "Team Number", "Goal Center"};
+    double[][] activeTargets = new double[][] {};
+    //Double[] temparray = new Double[] {};
+        public vision(){
+        }
 
-    }
-    
-    public void valueChanged(){
-        int size = init.oi.table.getInstance().length;
-        String table = init.oi.table.toString();
-        if(key=="targets"){
-            activeTargets= new int[size];
-           // activeTargets[];
-            for(int i =0;i < size;i++){
 
-                temparray = new Double[Double.parseDouble(table.split(", ")[0].substring(1)), Double.parseDouble(table.split(", ")[1]),Double.parseDouble(table.split(", ")[2]),Double.parseDouble(table.split(", ")[3]),Double.parseDouble(table.split(", ")[4].substring(-1)))];
-                
-                activeTargets[i] = [float(x.split()[0][1:-3]), float(x.split()[1][1:-1]), float(x.split()[2][1:-1]), float(x.split()[3][1:-1]), float(x.split()[4][1:-1])
-              //  activeTargets.add([float(x.split()[0][1:-3]), float(x.split()[1][1:-1]), float(x.split()[2][1:-1]), float(x.split()[3][1:-1]), float(x.split()[4][1:-1])])
+        public void valueChanged(){                             //make sure to call this function recursivley
+            String[] defaultValue = new String[0];
+            int size = init.oi.vision.getStringArray(defaultValue).length;
+            String[] visionArray = init.oi.vision.getStringArray(defaultValue);
+            final String table = init.oi.vision.toString();
+            activeTargets= new double[size][];
+            // activeTargets[];
+            for(int i=0; i < size; i++) {
+                activeTargets[i] = new double[] {Double.parseDouble(visionArray[i].split(", ")[0].substring(1).toString()), Double.parseDouble(visionArray[i].split(", ")[1]),Double.parseDouble(visionArray[i].split(", ")[2]),Double.parseDouble(visionArray[i].split(", ")[3]),Double.parseDouble(visionArray[i].split(", ")[4].substring(-1))};
             }
             System.out.print(activeTargets);
-
         }
     }
-
-    public void connectionListener(String connected, String info){
-       // System.out.print(info+ "; Connected=%s", connected);
-    }
-}
-*/
