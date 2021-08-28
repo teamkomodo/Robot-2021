@@ -2,7 +2,7 @@ package frc.robot.commands;
 /*
 import edu.wpi.first.networktables.*;
 import frc.robot.*;
-import frc.robot.commands.init;
+import frc.robot.commands.Init;
 
 /*
 
@@ -49,9 +49,9 @@ public class vision {
 
         public void valueChanged(){                             //make sure to call this function recursivley
             String[] defaultValue = new String[0];
-            int size = init.oi.vision.getStringArray(defaultValue).length;
-            String[] visionArray = init.oi.vision.getStringArray(defaultValue);
-            final String table = init.oi.vision.toString();
+            int size = Init.OI.vision.getStringArray(defaultValue).length;
+            String[] visionArray = Init.OI.vision.getStringArray(defaultValue);
+            final String table = Init.OI.vision.toString();
             activeTargets= new double[size][];
             // activeTargets[];
             for(int i=0; i < size; i++) {

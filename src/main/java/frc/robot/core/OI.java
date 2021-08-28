@@ -1,20 +1,14 @@
 package frc.robot.core;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
-import com.ctre.phoenix.motorcontrol.FeedbackDevice;
-import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX; 
-import frc.robot.core.Globalvaribles;
 import edu.wpi.first.networktables.*;
 
 
 public final class OI {
-    //init all joystics, motor controllers, and io devices here
+    //Init all joysticks, motor controllers, and io devices here
     public static Joystick gamepad;
     public static Joystick lJoystick;
     public static Joystick rJoystick;
@@ -42,7 +36,7 @@ public final class OI {
 
     public OI(){
         //assign values here
-        gamepad = new Joystick(robotMap.gamepad);
+        gamepad = new Joystick(RobotMap.GAMEPAD);
         lJoystick = new Joystick(0); // Change later
         rJoystick = new Joystick(1);
         motor1 = new WPI_TalonFX(12);

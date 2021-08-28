@@ -4,13 +4,13 @@ import frc.robot.commands.*;
 
 public class Robot extends TimedRobot {
   //import other files here
-  public static recursiveCode recursiveFunc;
-  public init Init;
+  public static RecursiveCode recursiveFunc;
+  public frc.robot.commands.Init Init;
 
   @Override
   public void robotInit() {
     //Called when the robot is initializing 
-    Init = new init("robotInit");
+    Init = new Init("robotInit");
   }
 
   @Override
@@ -21,7 +21,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     //Called when the robot is initializing 
-    Init = new init("autonomousInit");
+    Init = new Init("autonomousInit");
   }
   
   @Override
@@ -32,20 +32,20 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopInit() {
     //Called when the teleop is initializing 
-    Init = new init("teleopInit");
+    Init = new Init("teleopInit");
   }
 
   @Override
   public void teleopPeriodic() {
     //put teleop code here
-    // OI.drive.arcadeDrive(OI.gamepad.getRawAxis(robotMap.Ljoyy), OI.gamepad.getRawAxis(robotMap.Ljoyx));
-    recursiveFunc = new recursiveCode();
+    // OI.drive.arcadeDrive(OI.gamepad.getRawAxis(RobotMap.Ljoyy), OI.gamepad.getRawAxis(RobotMap.Ljoyx));
+    recursiveFunc = new RecursiveCode();
   }
 
   @Override
   public void testInit() {
     //Called when the test mode is initializing (can be turned on in driver station)
-    Init = new init("testInit");
+    Init = new Init("testInit");
   }
 
   @Override
