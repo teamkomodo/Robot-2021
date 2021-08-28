@@ -4,7 +4,7 @@ import frc.robot.commands.*;
 
 public class Robot extends TimedRobot {
   //import other files here
-  public static recursiveCode RecursiveCode;
+  public static recursiveCode recursiveFunc;
   public init Init;
 
   @Override
@@ -38,7 +38,8 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     //put teleop code here
-    RecursiveCode = new recursiveCode();
+    // OI.drive.arcadeDrive(OI.gamepad.getRawAxis(robotMap.Ljoyy), OI.gamepad.getRawAxis(robotMap.Ljoyx));
+    recursiveFunc = new recursiveCode();
   }
 
   @Override

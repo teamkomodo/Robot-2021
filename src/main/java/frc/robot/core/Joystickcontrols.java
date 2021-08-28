@@ -4,19 +4,31 @@ import frc.robot.core.OI;
 import frc.robot.core.Globalvaribles;
 import frc.robot.core.robotMap;
 
-public final class Joystickcontrols {
+import com.ctre.phoenix.motorcontrol.ControlMode;
 
 
-    public Joystickcontrols(){
-    }public String drive_funct(String name){
+public final class joystickControls {
+
+    public joystickControls() {
+
+    } 
+    public String driveFunc(String name){
             switch (name){
-                case "tankdrive":
-                    OI.drive.tankDrive(OI.gamepad.getRawAxis(robotMap.Ljoyy), OI.gamepad.getRawAxis(robotMap.Rjoyy));
+                case "tankDrive":
+                    OI.drive.tankDrive(OI.lJoystick.getRawAxis(robotMap.Ljoyy), OI.rJoystick.getRawAxis(robotMap.Rjoyy));
                     break;
-                case "arcadedrive":
-                    OI.drive.arcadeDrive(OI.gamepad.getRawAxis(robotMap.Ljoyy), OI.gamepad.getRawAxis(robotMap.Ljoyx));
+                case "arcadeDrive":
+                    OI.drive.arcadeDrive(OI.rJoystick.getRawAxis(robotMap.Ljoyy), OI.rJoystick.getRawAxis(robotMap.Ljoyx));
                     break;
             }
     return name;      
+    }
+
+    public void intakeFunc() {
+        if(OI.gamepad.getRawButtonPressed(robotMap.abutton)) {
+             OI.intake_motor.set(ControlMode.PercentOutput, 1);
+        } else if(OI.gamepad.getRawButtonPressed(robotMap.bbutton)) {
+            OI.intake_motor.set(ControlMode.PercentOutput, -1);
+        }
     }
 }
