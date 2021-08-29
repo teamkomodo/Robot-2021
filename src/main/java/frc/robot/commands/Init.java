@@ -1,27 +1,29 @@
 package frc.robot.commands;
+
 import frc.robot.core.*;
 
 public final class Init {
     //Init all initializers
     public static OI OI;
     frc.robot.core.RobotMap RobotMap;
-    public Init(String initMode){
+
+    public Init(String initMode) {
         //run all initializers
-        switch(initMode){
+        switch (initMode) {
             case "robotInit":
                 //robot Init
                 OI = new OI();
                 RobotMap = new RobotMap();
-            break;
+                break;
             case "autonomousInit":
                 //auto Init
-            break;
+                break;
             case "teleopInit":
                 //teleop Init
-            break;
+                break;
             case "testInit":
                 //test Init
-            break;
+                break;
         }
 
     }

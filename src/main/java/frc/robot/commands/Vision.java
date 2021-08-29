@@ -1,4 +1,5 @@
 package frc.robot.commands;
+
 /*
 import edu.wpi.first.networktables.*;
 import frc.robot.*;
@@ -39,24 +40,25 @@ while True:
     time.sleep(1)
 
 */
-public class vision {
-    String[] dataTypes = new String[] {"Lower Goal", "Feeder Station", "Robot", "Goal", "Ball", "Light", "Team Number", "Light", "Team Number", "Goal Center"};
-    double[][] activeTargets = new double[][] {};
+public class Vision {
+    String[] dataTypes = new String[]{"Lower Goal", "Feeder Station", "Robot", "Goal", "Ball", "Light", "Team Number", "Light", "Team Number", "Goal Center"};
+    double[][] activeTargets = new double[][]{};
+
     //Double[] temparray = new Double[] {};
-        public vision(){
-        }
-
-
-        public void valueChanged(){                             //make sure to call this function recursivley
-            String[] defaultValue = new String[0];
-            int size = Init.OI.vision.getStringArray(defaultValue).length;
-            String[] visionArray = Init.OI.vision.getStringArray(defaultValue);
-            final String table = Init.OI.vision.toString();
-            activeTargets= new double[size][];
-            // activeTargets[];
-            for(int i=0; i < size; i++) {
-                activeTargets[i] = new double[] {Double.parseDouble(visionArray[i].split(", ")[0].substring(1).toString()), Double.parseDouble(visionArray[i].split(", ")[1]),Double.parseDouble(visionArray[i].split(", ")[2]),Double.parseDouble(visionArray[i].split(", ")[3]),Double.parseDouble(visionArray[i].split(", ")[4].substring(-1))};
-            }
-            System.out.print(activeTargets);
-        }
+    public Vision() {
     }
+
+
+    public void valueChanged() {                             //make sure to call this function recursively
+        String[] defaultValue = new String[0];
+        int size = Init.OI.vision.getStringArray(defaultValue).length;
+        String[] visionArray = Init.OI.vision.getStringArray(defaultValue);
+        final String table = Init.OI.vision.toString();
+        activeTargets = new double[size][];
+        // activeTargets[];
+        for (int i = 0; i < size; i++) {
+            activeTargets[i] = new double[]{Double.parseDouble(visionArray[i].split(", ")[0].substring(1).toString()), Double.parseDouble(visionArray[i].split(", ")[1]), Double.parseDouble(visionArray[i].split(", ")[2]), Double.parseDouble(visionArray[i].split(", ")[3]), Double.parseDouble(visionArray[i].split(", ")[4].substring(-1))};
+        }
+        System.out.print(activeTargets);
+    }
+}

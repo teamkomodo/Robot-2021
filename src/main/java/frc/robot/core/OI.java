@@ -1,4 +1,5 @@
 package frc.robot.core;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
@@ -34,7 +35,7 @@ public final class OI {
     public CANEncoder shooter_encoder1;
     public CANEncoder shooter_encoder2; */
 
-    public OI(){
+    public OI() {
         //assign values here
         gamepad = new Joystick(RobotMap.GAMEPAD);
         lJoystick = new Joystick(0); // Change later
@@ -46,7 +47,7 @@ public final class OI {
         motor2.follow(motor1);
         motor4.follow(motor3);
 
-        drive = new DifferentialDrive(motor1,motor3);
+        drive = new DifferentialDrive(motor1, motor3);
 
         table = NetworkTableInstance.getDefault().getTable("ObjectDetection");
         vision = table.getEntry("targets");

@@ -2,6 +2,7 @@ package frc.robot.core;
 
 public final class RecursiveCode {
     public JoystickControls Drive;
+
     public RecursiveCode() {
         //call functions here (recursive)
         Drive = new JoystickControls();
