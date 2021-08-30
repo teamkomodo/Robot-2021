@@ -48,7 +48,6 @@ public class Vision {
     public Vision() {
     }
 
-
     public void valueChanged() {                             //make sure to call this function recursively
         String[] defaultValue = new String[0];
         int size = Init.OI.vision.getStringArray(defaultValue).length;

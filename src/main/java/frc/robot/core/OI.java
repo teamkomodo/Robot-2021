@@ -37,7 +37,7 @@ public final class OI {
 
     public OI() {
         //assign values here
-        gamepad = new Joystick(RobotMap.GAMEPAD);
+        gamepad = new Joystick(RobotMapEnum.GAMEPAD.getMap());
         lJoystick = new Joystick(0); // Change later
         rJoystick = new Joystick(1);
         motor1 = new WPI_TalonFX(12);

@@ -6,7 +6,6 @@ import frc.robot.core.JoystickControls;
 public final class Periodic {
     //Init all initializers
     OI OI;
-    frc.robot.core.RobotMap RobotMap;
     JoystickControls Drive;
 
     public Periodic(String periodicMode) {
@@ -15,7 +14,6 @@ public final class Periodic {
             case "robotPeriodic":
                 //robot Init
                 OI = new OI();
-                RobotMap = new RobotMap();
                 break;
             case "autonomousPeriodic":
                 //auto Init

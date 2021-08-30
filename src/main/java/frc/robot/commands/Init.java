@@ -5,7 +5,6 @@ import frc.robot.core.*;
 public final class Init {
     //Init all initializers
     public static OI OI;
-    frc.robot.core.RobotMap RobotMap;
 
     public Init(String initMode) {
         //run all initializers
@@ -13,7 +12,6 @@ public final class Init {
             case "robotInit":
                 //robot Init
                 OI = new OI();
-                RobotMap = new RobotMap();
                 break;
             case "autonomousInit":
                 //auto Init
