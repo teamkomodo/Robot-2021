@@ -6,20 +6,20 @@ public final class Init {
     //Init all initializers
     public static OI OI;
 
-    public Init(String initMode) {
+    public Init(InitMode initMode) {
         //run all initializers
         switch (initMode) {
-            case "robotInit":
+            case ROBOT:
                 //robot Init
                 OI = new OI();
                 break;
-            case "autonomousInit":
+            case AUTONOMOUS:
                 //auto Init
                 break;
-            case "teleopInit":
+            case TELEOP:
                 //teleop Init
                 break;
-            case "testInit":
+            case TEST:
                 //test Init
                 break;
         }

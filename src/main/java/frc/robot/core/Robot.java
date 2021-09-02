@@ -6,12 +6,12 @@ import frc.robot.commands.*;
 public class Robot extends TimedRobot {
     //import other files here
     public static RecursiveCode recursiveFunc;
-    public frc.robot.commands.Init Init;
+    public Init Init;
 
     @Override
     public void robotInit() {
         //Called when the robot is initializing
-        Init = new Init("robotInit");
+        Init = new Init(InitMode.ROBOT);
     }
 
     @Override
@@ -22,7 +22,7 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousInit() {
         //Called when the robot is initializing
-        Init = new Init("autonomousInit");
+        Init = new Init(InitMode.AUTONOMOUS);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopInit() {
         //Called when the teleop is initializing
-        Init = new Init("teleopInit");
+        Init = new Init(InitMode.TELEOP);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class Robot extends TimedRobot {
     @Override
     public void testInit() {
         //Called when the test mode is initializing (can be turned on in driver station)
-        Init = new Init("testInit");
+        Init = new Init(InitMode.TEST);
     }
 
     @Override

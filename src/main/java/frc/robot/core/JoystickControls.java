@@ -5,16 +5,16 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 
 public final class JoystickControls {
 
-    public String driveFunc(String name) {
-        switch (name) {
-            case "tankDrive":
+    public DriveMode driveFunc(DriveMode driveMode) {
+        switch (driveMode) {
+            case TANK:
                 OI.drive.tankDrive(OI.lJoystick.getRawAxis(RobotMapEnum.L_JOYSTICK_Y.getMap()), OI.rJoystick.getRawAxis(RobotMapEnum.R_JOYSTICK_Y.getMap()));
                 break;
-            case "arcadeDrive":
+            case ARCADE:
                 OI.drive.arcadeDrive(OI.rJoystick.getRawAxis(RobotMapEnum.L_JOYSTICK_Y.getMap()), OI.rJoystick.getRawAxis(RobotMapEnum.L_JOYSTICK_X.getMap()));
                 break;
         }
-        return name;
+        return driveMode;
     }
 
     public void intakeFunc() {

@@ -20,7 +20,7 @@ public final class Periodic {
                 break;
             case "teleopPeriodic":
                 Drive = new JoystickControls();
-                Drive.driveFunc("tankDrive");
+                Drive.driveFunc(DriveMode.TANK);
                 //teleop Init
                 break;
             case "testPeriodic":
