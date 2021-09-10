@@ -1,7 +1,11 @@
 package frc.robot.core;
 
 
-public class RobotMap {
+public final class RobotMap {
+    private RobotMap() {
+        throw new UnsupportedOperationException();
+    }
+    
     //put a map of all control devices here
     public static final int GAMEPAD = 2;
     public static final int A_BUTTON = 1;
