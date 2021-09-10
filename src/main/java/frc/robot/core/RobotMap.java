@@ -10,10 +10,13 @@ public class RobotMap {
     public static final int Y_BUTTON = 4;
     public static final int L_BUMPER = 5;
     public static final int R_BUMPER = 6;
+    public static final int R_TRIGGER = 3;
+    public static final int L_TRIGGER = 2; 
     public static final int lfb = 7;
     public static final int rfb = 8;
     public static final int L_JOYSTICK_X = 0;
     public static final int L_JOYSTICK_Y = 1;
     public static final int R_JOYSTICK_X = 4;
     public static final int R_JOYSTICK_Y = 5;
+
 }
