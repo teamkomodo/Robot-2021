@@ -11,7 +11,7 @@ public final class JoystickControls {
                 OI.drive.tankDrive(OI.lJoystick.getRawAxis(RobotMap.L_JOYSTICK_Y), OI.rJoystick.getRawAxis(RobotMap.R_JOYSTICK_Y));
                 break;
             case "arcadeDrive":
-                OI.drive.arcadeDrive(OI.rJoystick.getRawAxis(RobotMap.L_JOYSTICK_Y), OI.rJoystick.getRawAxis(RobotMap.L_JOYSTICK_X));
+                OI.drive.arcadeDrive(OI.rJoystick.getRawAxis(RobotMap.L_JOYSTICK_Y), -OI.rJoystick.getRawAxis(RobotMap.L_JOYSTICK_X));
                 break;
         }
         return name;
@@ -20,8 +20,9 @@ public final class JoystickControls {
     public void intakeFunc() {
        
      if (OI.gamepad.getRawButtonPressed(RobotMap.A_BUTTON)) {
-            OI.intake_motor.set(ControlMode.PercentOutput, .75);
+            OI.intake_motor.set(ControlMode.PercentOutput, 0.75);
             OI.hopper_motor.set(ControlMode.PercentOutput, .6);
+
         } else if (OI.gamepad.getRawButtonPressed(RobotMap.B_BUTTON)) {
             OI.intake_motor.set(ControlMode.PercentOutput, -.8);
             OI.hopper_motor.set(ControlMode.PercentOutput, -.6);
@@ -35,16 +36,15 @@ public final class JoystickControls {
     }
     }
     public void shooterFunc(){
-        OI.shooterPIDcontroller1.setReference(5700, ControlType.kVelocity);
-        OI.shooterPIDcontroller2.setReference(5700, ControlType.kVelocity);
-        if(OI.gamepad.getRawButtonPressed(RobotMap.R_TRIGGER)){
-            OI.shooterPIDcontroller1.setReference(5700, ControlType.kVelocity);
-            OI.shooterPIDcontroller2.setReference(5700, ControlType.kVelocity); 
-            OI.shooterintakePID.setReference(1000, ControlType.kVelocity);
-        } else if(OI.gamepad.getRawButtonReleased(RobotMap.R_TRIGGER)){
-            OI.shooterPIDcontroller1.setReference(0, ControlType.kVelocity);
-            OI.shooterPIDcontroller1.setReference(0, ControlType.kVelocity);    
-            OI.shooterintakePID.setReference(0, ControlType.kVelocity);
+        if(OI.gamepad.getRawButtonPressed(RobotMap.X_BUTTON)){
+            System.out.println("X");
+            OI.shooterPIDcontroller1.setReference(5000, ControlType.kVelocity);
+            OI.shooterPIDcontroller2.setReference(-5000, ControlType.kVelocity);// Not Working
+            OI.shooterintakePID.setReference(-1000, ControlType.kVelocity);
+        } else if(OI.gamepad.getRawButtonReleased(RobotMap.X_BUTTON)){
+            OI.shooter_motor1.set(0);
+            OI.shooter_motor2.set(0);
+            OI.shooter_intake.set(0);
         }
     }
 

@@ -1,5 +1,7 @@
 package frc.robot.core;
 
+import com.revrobotics.ControlType;
+
 public final class RecursiveCode {
     public JoystickControls Drive;
 
@@ -9,5 +11,6 @@ public final class RecursiveCode {
         //this code will be run for as long as the robot is enabled
         Drive.driveFunc("tankDrive");
         Drive.intakeFunc();
+        Drive.shooterFunc();
     }
 }
