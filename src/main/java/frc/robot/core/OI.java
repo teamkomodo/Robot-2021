@@ -4,7 +4,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import com.ctre.phoenix.music.Orchestra;
 import edu.wpi.first.networktables.*;
 
 
@@ -42,6 +44,8 @@ public final class OI {
     public static CANEncoder shooter_encoder1;
     public static CANEncoder shooter_encoder2;
     public static CANEncoder shooter_intake_encoder;
+
+    public static Orchestra mainOrchestra;
     
     public double kP, kI, kD, kIz, kFF, kMaxOutput, kMinOutput;
 
@@ -121,6 +125,12 @@ public final class OI {
         shooterintakePID.setFF(kFF);
         shooterintakePID.setOutputRange(kMinOutput, kMaxOutput);
         
-    
+        mainOrchestra = new Orchestra();
+        mainOrchestra.addInstrument(new TalonFX(motor1.getDeviceID()));
+        mainOrchestra.addInstrument(new TalonFX(motor2.getDeviceID()));
+        mainOrchestra.addInstrument(new TalonFX(motor3.getDeviceID()));
+        mainOrchestra.addInstrument(new TalonFX(motor4.getDeviceID()));
+        mainOrchestra.loadMusic("mainOrchestra.chrp");
+
     }
 }

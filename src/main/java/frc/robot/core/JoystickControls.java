@@ -13,6 +13,9 @@ public final class JoystickControls {
             case "arcadeDrive":
                 OI.drive.arcadeDrive(OI.rJoystick.getRawAxis(RobotMap.L_JOYSTICK_Y), -OI.rJoystick.getRawAxis(RobotMap.L_JOYSTICK_X));
                 break;
+            case "orchestraDrive":
+                 OI.mainOrchestra.play();
+                 break;
         }
         return name;
     }
