@@ -27,8 +27,8 @@ public final class OI {
     public WPI_TalonFX motor3;
     public WPI_TalonFX motor4;
     public static DifferentialDrive drive;
-    public NetworkTable table;
-    public NetworkTableEntry vision;
+    public static NetworkTable table;
+    public static NetworkTableEntry vision;
 
     public static TalonSRX intake_motor;
     public static TalonSRX cp_motor;
@@ -48,6 +48,19 @@ public final class OI {
     public static Orchestra mainOrchestra;
     
     public double kP, kI, kD, kIz, kFF, kMaxOutput, kMinOutput;
+
+    public static NetworkTableEntry tx;
+    public static NetworkTableEntry ty;
+    public static NetworkTableEntry ta;
+    public static NetworkTableEntry tv;
+
+    public static double lx;
+    public static double ly;
+    public static double la;
+    public static double lv;
+
+    public static double temp1;
+    public static double temp2;
 
     public OI() {
         //assign values here
