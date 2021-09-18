@@ -15,6 +15,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import com.revrobotics.CANPIDController;
 import com.revrobotics.CANEncoder;
+import edu.wpi.first.wpilibj.Servo;
 
 
 
@@ -47,6 +48,8 @@ public final class OI {
     public static CANEncoder shooter_intake_encoder;
 
     public static AHRS navx;
+
+    public static Servo swivle;
 
     public static Orchestra mainOrchestra;
     
@@ -99,6 +102,8 @@ public final class OI {
 
         drive = new DifferentialDrive(motor1, motor3);
 
+        swivle = new Servo(0);
+
         table = NetworkTableInstance.getDefault().getTable("ObjectDetection");
         vision = table.getEntry("targets");
 
@@ -113,26 +118,6 @@ public final class OI {
         shooterPIDcontroller2 = shooter_motor2.getPIDController();
         shooterintakePID = shooter_intake.getPIDController();
         shooter_intake_encoder = shooter_intake.getEncoder();
-        /*
-        shooterPIDcontroller1.setP(0.0012000000);      //8e-80
-        shooterPIDcontroller1.setI(.0000016);     //.25e-6
-        shooterPIDcontroller1.setD(0.2);          //0
-        shooterPIDcontroller1.setIZone(0);      //0
-        shooterPIDcontroller1.setFF(.0005);         //.000015
-        shooterPIDcontroller1.setOutputRange(0, 1);
-        shooterPIDcontroller2.setP(0.0012000000);
-        shooterPIDcontroller2.setI(.0000016);
-        shooterPIDcontroller2.setD(0.2);
-        shooterPIDcontroller2.setIZone(0);
-        shooterPIDcontroller2.setFF(.0005);
-        shooterPIDcontroller2.setOutputRange(-1, 0);
-        shooterintakePID.setP(5e-5);
-        shooterintakePID.setI(1e-6);
-        shooterintakePID.setD(0);
-        shooterintakePID.setIZone(0);
-        shooterintakePID.setFF(0.000156);
-        shooterintakePID.setOutputRange(-1, 1);
-        */
 
         shooterPIDcontroller1.setP(kP);
         shooterPIDcontroller1.setI(kI);
