@@ -40,7 +40,7 @@ public class Robot extends TimedRobot {
     public void teleopPeriodic() {
         //put teleop code here
         // OI.drive.arcadeDrive(OI.gamepad.getRawAxis(RobotMap.Ljoyy), OI.gamepad.getRawAxis(RobotMap.Ljoyx));
-        System.out.println(OI.rJoystick.getRawButton(RobotMap.R_TRIGGER));
+        System.out.println(Globals.UserControl);
         recursiveFunc = new RecursiveCode();
     }
 
