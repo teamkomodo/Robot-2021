@@ -7,7 +7,9 @@ public final class RobotMap {
     }
     
     //put a map of all control devices here
-    public static final int GAMEPAD = 0;
+    public static final int GAMEPAD = 2;
+    public static final int R_JOYSTICK = 1;
+    public static final int L_JOYSTICK = 0;
     public static final int A_BUTTON = 1;
     public static final int B_BUTTON = 2;
     public static final int X_BUTTON = 3;

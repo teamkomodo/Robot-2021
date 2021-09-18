@@ -41,10 +41,9 @@ public final class JoystickControls {
     }
     public void shooterFunc(){
         if(OI.gamepad.getRawButtonPressed(RobotMap.X_BUTTON)){
-            System.out.println("X");
             OI.shooterPIDcontroller1.setReference(5000, ControlType.kVelocity);
             OI.shooterPIDcontroller2.setReference(-5000, ControlType.kVelocity);// Not Working
-            OI.shooterintakePID.setReference(-1000, ControlType.kVelocity);
+            OI.shooterintakePID.setReference(-2500, ControlType.kVelocity);
         } else if(OI.gamepad.getRawButtonReleased(RobotMap.X_BUTTON)){
             OI.shooter_motor1.set(0);
             OI.shooter_motor2.set(0);
@@ -62,7 +61,7 @@ public final class JoystickControls {
         if(OI.gamepad.getRawButtonPressed(RobotMap.R_TRIGGER)) {
             OI.cR_timer.start();
             OI.cl_upR.set(ControlMode.PercentOutput, 0.5);
-        } else if (OI.cL_timer.get() > 1) {
+        } else if (OI.cR_timer.get() > 1) {
             OI.cl_upR.set(ControlMode.PercentOutput, 0);
         }
     }
@@ -76,7 +75,7 @@ public final class JoystickControls {
             OI.shooterPIDcontroller2.setReference(-Globals.Vilocity1, ControlType.kVelocity);
             if(OI.shooter_encoder1.getVelocity() + 300 >= Globals.Vilocity1 && OI.shooter_encoder1.getVelocity() - 300 <= Globals.Vilocity1){
                 if(!Globals.intake_flag){
-                    OI.Limelight_timer.start();
+                    OI.limelight_timer.start();
                     OI.shotclock_timer.start();
                     Globals.intake_flag = true;
                 }
@@ -110,6 +109,7 @@ public final class JoystickControls {
                         }
                     }   
                 }else{
+
                     Globals.RPM_good = false;
                     OI.shooter_intake.set(0);
                     Globals.anticlogtimer_flag = false;
@@ -128,6 +128,8 @@ public final class JoystickControls {
                     //    OI.shooter_intake.set(.25);
                 }
             }
+        }else if (OI.rJoystick.getRawButtonReleased(RobotMap.R_TRIGGER)) {
+            Globals.UserControl = true;
         }
     }
 

@@ -91,7 +91,7 @@ public final class Vision {
             ;
             dA*=scaler;
 
-            if(OI.Limelight_timer.get() < .5){
+            if(OI.limelight_timer.get() < .5){
                 dA = 0;
             }
             dA = 0;

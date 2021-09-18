@@ -71,7 +71,7 @@ public final class OI {
     public static Timer shotclock_timer;
     public static Timer intake_timer;
     public static Timer anitclog_timer;
-    public static Timer Limelight_timer;
+    public static Timer limelight_timer;
     public static Timer ball_timer;
     public static Timer revolver_timer;
     public static Timer revolver_timer_delay;
@@ -87,8 +87,8 @@ public final class OI {
     public OI() {
         //assign values here
         gamepad = new Joystick(RobotMap.GAMEPAD);
-        lJoystick = new Joystick(1); // Change later
-        rJoystick = new Joystick(2);
+        lJoystick = new Joystick(0); // Change later
+        rJoystick = new Joystick(1);
         motor1 = new WPI_TalonFX(12);
         motor2 = new WPI_TalonFX(13);
         motor3 = new WPI_TalonFX(15);
@@ -142,6 +142,9 @@ public final class OI {
         shooterintakePID.setFF(kFF);
         shooterintakePID.setOutputRange(kMinOutput, kMaxOutput);
 
+        shooter_encoder1 = shooter_motor1.getEncoder();
+        shooter_encoder2 = shooter_motor1.getEncoder();
+
         cl_upL = new TalonSRX(5);
         cl_upR = new TalonSRX(4);
         
@@ -152,5 +155,19 @@ public final class OI {
         mainOrchestra.addInstrument(new TalonFX(motor4.getDeviceID()));
         mainOrchestra.loadMusic("mainOrchestra.chrp");
 
+        shotclock_timer = new Timer();
+        intake_timer = new Timer();
+        anitclog_timer = new Timer();
+        limelight_timer = new Timer();
+        ball_timer = new Timer();
+        revolver_timer = new Timer();
+        revolver_timer.start();
+        revolver_timer_delay = new Timer();
+        revolver_timer_delay.start();
+        cL_timer = new Timer();
+        cR_timer = new Timer();
+        auto_timer = new Timer();
+        auto_hopper_tTimer = new Timer();
+        target_blocked_Timer = new Timer();
     }
 }

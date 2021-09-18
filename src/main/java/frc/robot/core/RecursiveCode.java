@@ -17,8 +17,11 @@ public final class RecursiveCode {
                 Drive.driveFunc(driveType);
                 Drive.intakeFunc();
                 Drive.shooterFunc();
+                Drive.climberFunc();
+            }else{
+                Drive.visionFunc();
             }
-            Drive.visionFunc();
+            
         }
     }
 }

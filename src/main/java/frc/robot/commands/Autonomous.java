@@ -35,7 +35,7 @@ public final class Autonomous {
                     OI.shooterPIDcontroller2.setReference(-2800, ControlType.kVelocity);
                     if (OI.shooter_encoder1.getVelocity() + 500 > 2800 && OI.shooter_encoder1.getVelocity() - 500 < 2800) {
                         if (!Globals.intake_flag) {
-                            OI.Limelight_timer.start();
+                            OI.limelight_timer.start();
                             OI.shotclock_timer.start();
                             Globals.intake_flag = true;
                         }
