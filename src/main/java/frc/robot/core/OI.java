@@ -1,6 +1,7 @@
 package frc.robot.core;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -8,7 +9,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import com.ctre.phoenix.music.Orchestra;
 import edu.wpi.first.networktables.*;
-
+import com.kauailabs.navx.frc.AHRS;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
@@ -22,10 +23,10 @@ public final class OI {
     public static Joystick gamepad;
     public static Joystick lJoystick;
     public static Joystick rJoystick;
-    public WPI_TalonFX motor1;
-    public WPI_TalonFX motor2;
-    public WPI_TalonFX motor3;
-    public WPI_TalonFX motor4;
+    public static WPI_TalonFX motor1;
+    public static WPI_TalonFX motor2;
+    public static WPI_TalonFX motor3;
+    public static WPI_TalonFX motor4;
     public static DifferentialDrive drive;
     public static NetworkTable table;
     public static NetworkTableEntry vision;
@@ -45,9 +46,11 @@ public final class OI {
     public static CANEncoder shooter_encoder2;
     public static CANEncoder shooter_intake_encoder;
 
+    public static AHRS navx;
+
     public static Orchestra mainOrchestra;
     
-    public double kP, kI, kD, kIz, kFF, kMaxOutput, kMinOutput;
+    public static double kP, kI, kD, kIz, kFF, kMaxOutput, kMinOutput;
 
     public static NetworkTableEntry tx;
     public static NetworkTableEntry ty;
@@ -61,6 +64,18 @@ public final class OI {
 
     public static double temp1;
     public static double temp2;
+
+    public static Timer shotclock_timer;
+    public static Timer intake_timer;
+    public static Timer anitclog_timer;
+    public static Timer Limelight_timer;
+    public static Timer ball_timer;
+    public static Timer revolver_timer;
+    public static Timer revolver_timer_delay;
+    public static Timer cL_timer;
+    public static Timer auto_timer;
+    public static Timer auto_hopper_tTimer;
+    public static Timer target_blocked_Timer;
 
     public OI() {
         //assign values here

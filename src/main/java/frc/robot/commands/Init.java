@@ -5,6 +5,7 @@ import frc.robot.core.*;
 public final class Init {
     //Init all initializers
     public static OI OI;
+    public static Autonomous autonomous;
 
     public Init(String initMode) {
         //run all initializers
@@ -15,6 +16,7 @@ public final class Init {
                 break;
             case "autonomousInit":
                 //auto Init
+                autonomous = new Autonomous();
                 break;
             case "teleopInit":
                 //teleop Init
