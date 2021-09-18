@@ -76,9 +76,13 @@ public final class OI {
     public static Timer revolver_timer;
     public static Timer revolver_timer_delay;
     public static Timer cL_timer;
+    public static Timer cR_timer;
     public static Timer auto_timer;
     public static Timer auto_hopper_tTimer;
     public static Timer target_blocked_Timer;
+
+    public static TalonSRX cl_upR;
+    public static TalonSRX cl_upL;
 
     public OI() {
         //assign values here
@@ -137,6 +141,9 @@ public final class OI {
         shooterintakePID.setIZone(kIz);
         shooterintakePID.setFF(kFF);
         shooterintakePID.setOutputRange(kMinOutput, kMaxOutput);
+
+        cl_upL = new TalonSRX(5);
+        cl_upR = new TalonSRX(4);
         
         mainOrchestra = new Orchestra();
         mainOrchestra.addInstrument(new TalonFX(motor1.getDeviceID()));

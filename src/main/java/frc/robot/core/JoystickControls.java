@@ -50,7 +50,24 @@ public final class JoystickControls {
             OI.shooter_motor2.set(0);
             OI.shooter_intake.set(0);
         }
-    }public void visionFunc(){
+    }
+
+    public void climberFunc() {
+        if(OI.gamepad.getRawButtonPressed(RobotMap.L_TRIGGER)) {
+            OI.cL_timer.start();
+            OI.cl_upL.set(ControlMode.PercentOutput, 0.5);
+        } else if (OI.cL_timer.get() > 1) {
+            OI.cl_upL.set(ControlMode.PercentOutput, 0);
+        }
+        if(OI.gamepad.getRawButtonPressed(RobotMap.R_TRIGGER)) {
+            OI.cR_timer.start();
+            OI.cl_upR.set(ControlMode.PercentOutput, 0.5);
+        } else if (OI.cL_timer.get() > 1) {
+            OI.cl_upR.set(ControlMode.PercentOutput, 0);
+        }
+    }
+
+    public void visionFunc(){
         if (OI.rJoystick.getRawButtonPressed(RobotMap.R_TRIGGER)) {
             OI.swivle.setAngle(5);
             vision = new Vision(.975,0,1.0, -3);
