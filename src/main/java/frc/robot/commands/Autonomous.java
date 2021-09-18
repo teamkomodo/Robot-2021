@@ -30,7 +30,7 @@ public final class Autonomous {
                         sA = -1;
                     }
                 } else {
-                    visionFunction = new Vision(.975, 0, 1.0);
+                    visionFunction = new Vision(.975,0,1.0, -3);
                     OI.shooterPIDcontroller1.setReference(2800, ControlType.kVelocity);
                     OI.shooterPIDcontroller2.setReference(-2800, ControlType.kVelocity);
                     if (OI.shooter_encoder1.getVelocity() + 500 > 2800 && OI.shooter_encoder1.getVelocity() - 500 < 2800) {

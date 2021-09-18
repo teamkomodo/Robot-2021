@@ -13,9 +13,12 @@ public final class RecursiveCode {
         if(driveType == "orchestraDrive") {
             Drive.driveFunc(driveType);
         } else {
-            Drive.driveFunc("tankDrive");
-            Drive.intakeFunc();
-            Drive.shooterFunc();
+            if(Globals.UserControl){
+                Drive.driveFunc(driveType);
+                Drive.intakeFunc();
+                Drive.shooterFunc();
+            }
+            Drive.visionFunc();
         }
     }
 }
